@@ -5,88 +5,232 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fathah | Portfolio</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background-color: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    * {
+      box-sizing: border-box;
     }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      background: #1e1e1e;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+      animation: fadeIn 1s ease forwards;
+    }
+
     header {
       text-align: center;
       margin-bottom: 50px;
     }
+
     header h1 {
-      font-size: 2.8rem;
+      font-weight: 600;
+      font-size: 3.5rem;
+      letter-spacing: 2px;
+      color: #61dafb;
       margin-bottom: 8px;
-      color: #222;
     }
+
     header p {
-      font-size: 1.2rem;
-      color: #666;
+      font-weight: 300;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      color: #bbb;
     }
+
     section {
       margin-bottom: 50px;
     }
+
     h2 {
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 6px;
-      margin-bottom: 20px;
-      color: #007acc;
+      font-weight: 600;
+      font-size: 2.2rem;
+      border-bottom: 3px solid #61dafb;
+      padding-bottom: 8px;
+      margin-bottom: 30px;
+      letter-spacing: 1.5px;
+      color: #61dafb;
     }
-    ul {
-      list-style: none;
-      padding-left: 0;
+
+    .about p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+      color: #ddd;
     }
-    ul li {
-      margin-bottom: 12px;
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
-    a {
-      color: #007acc;
+
+    .project-card {
+      background: #292929;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(97,218,251,0.6);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h3 {
+      margin: 0 0 12px 0;
+      font-size: 1.5rem;
+      color: #61dafb;
+    }
+
+    .project-content p {
+      margin: 0 0 16px 0;
+      color: #ccc;
+      font-size: 1rem;
+    }
+
+    .project-content a {
+      color: #82aaff;
       text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
-    a:hover {
+
+    .project-content a:hover {
+      color: #bb86fc;
       text-decoration: underline;
     }
+
+    .contact-info p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      color: #ccc;
+    }
+
+    .contact-info a {
+      color: #82aaff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #bb86fc;
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
-      color: #888;
+      color: #555;
       font-size: 0.9rem;
-      margin-top: 80px;
-      border-top: 1px solid #ddd;
+      border-top: 1px solid #333;
       padding-top: 20px;
+      margin-top: 40px;
+      font-style: italic;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Fathah</h1>
-    <p>Developer & Ethical Hacker</p>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Fathah</h1>
+      <p>Developer & Ethical Hacker</p>
+    </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a developer and ethical hacker with experience working on Minecraft servers and exploring cybersecurity. I enjoy coding, problem-solving, and testing systems to improve security and functionality.</p>
-  </section>
+    <section class="about" id="about">
+      <h2>About Me</h2>
+      <p>
+        I’m a passionate developer and ethical hacker with hands-on experience building Minecraft server plugins and exploring cybersecurity. I love solving problems and constantly expanding my skills in coding and security.
+      </p>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>Developed custom plugins and features for various Minecraft servers.</li>
-      <li>Performed ethical hacking exercises to identify and fix vulnerabilities.</li>
-      <li>Continuously learning new tools and techniques in development and cybersecurity.</li>
-    </ul>
-  </section>
+    <section class="projects" id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Discord: fathah.pvp</p>
-  </section>
+        <div class="project-card">
+          <img class="project-image" src="https://via.placeholder.com/400x180?text=Minecraft+Plugin+1" alt="Minecraft Plugin 1" />
+          <div class="project-content">
+            <h3>Custom Minecraft Plugin</h3>
+            <p>Developed unique gameplay features and commands for a popular Minecraft server.</p>
+            <a href="https://github.com/fathahpvp/minecraft-plugin-1" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+        </div>
 
-  <footer>
-    &copy; 2025 Fathah. All rights reserved.
-  </footer>
+        <div class="project-card">
+          <img class="project-image" src="https://via.placeholder.com/400x180?text=Ethical+Hacking" alt="Ethical Hacking Project" />
+          <div class="project-content">
+            <h3>Ethical Hacking Challenges</h3>
+            <p>Performed vulnerability assessments and penetration tests in controlled environments.</p>
+            <a href="#" target="_blank" rel="noopener noreferrer">Learn More</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img class="project-image" src="https://via.placeholder.com/400x180?text=Server+Scripts" alt="Server Scripts" />
+          <div class="project-content">
+            <h3>Server Automation Scripts</h3>
+            <p>Created scripts to automate server maintenance and backups, improving uptime.</p>
+            <a href="https://github.com/fathahpvp/server-scripts" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <p>Discord: <strong>fathah.pvp</strong></p>
+        <p>GitHub: <a href="https://github.com/fathahpvp" target="_blank" rel="noopener noreferrer">github.com/fathahpvp</a></p>
+        <!-- Add more socials here if you want -->
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Fathah. All rights reserved.
+    </footer>
+  </div>
 </body>
 </html>
